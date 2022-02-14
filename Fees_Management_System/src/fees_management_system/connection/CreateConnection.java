@@ -7,7 +7,7 @@ public class CreateConnection {
 
     private static final String DB_URL = "jdbc:mysql://localhost:3306/fees_management_system?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC";
     private static final String DB_USER = "root";
-    private static final String DB_PASS = "root";
+    private static final String DB_PASS = "1234";
     private static final String DB_DRIVER = "com.mysql.cj.jdbc.Driver";
 
     public static Connection getConnection() {
