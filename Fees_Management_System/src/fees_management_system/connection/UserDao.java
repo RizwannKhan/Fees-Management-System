@@ -32,7 +32,7 @@ public class UserDao {
             stmt.setString(4, user.getPassword());
             stmt.setString(5, date);
             stmt.setString(6, user.getContact());
-
+            System.out.println("Query : " + stmt);
             stmt.executeUpdate();
             status = true;
         } catch (Exception e) {
@@ -50,6 +50,7 @@ public class UserDao {
             String query = "select * from signup where username='" + username + "' and password='" + password + "'";
 
             Statement stmt = con.createStatement();
+            System.out.println("Query : " + stmt);
             ResultSet rs = stmt.executeQuery(query);
 
             while (rs.next()) {
