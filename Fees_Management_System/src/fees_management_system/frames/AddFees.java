@@ -775,6 +775,9 @@ public class AddFees extends javax.swing.JFrame {
             //database code...
             if (insertData()) {
                 JOptionPane.showMessageDialog(this, "Details are inserted successfuly");
+                PrintReceipt receipt = new PrintReceipt();
+                receipt.setVisible(true);
+                this.dispose();
             } else {
                 JOptionPane.showMessageDialog(this, "Something went wrong, please try again");
             }
