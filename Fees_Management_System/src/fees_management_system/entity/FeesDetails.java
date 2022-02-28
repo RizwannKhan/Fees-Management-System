@@ -1,11 +1,14 @@
 package fees_management_system.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * @author Rijwank
  */
-public class FeesDetails {
+public class FeesDetails implements Serializable {
+
+    private static final long serialVersionUID = 0L;
 
     private int receiptNo;
     private String paymentMode;
@@ -192,6 +195,16 @@ public class FeesDetails {
     }
 
     public FeesDetails() {
+    }
+
+    public FeesDetails(int receiptNo, String rollNo, String studentName, String courseName, String paymentMode, float totalAmount, String remark) {
+        this.receiptNo = receiptNo;
+        this.paymentMode = paymentMode;
+        this.studentName = studentName;
+        this.rollNo = rollNo;
+        this.courseName = courseName;
+        this.totalAmount = totalAmount;
+        this.remark = remark;
     }
 
 }

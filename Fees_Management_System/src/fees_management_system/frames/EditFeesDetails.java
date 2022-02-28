@@ -2,11 +2,13 @@ package fees_management_system.frames;
 
 import fees_management_system.connection.CourseDao;
 import fees_management_system.connection.FeesDetailsDao;
+import fees_management_system.connection.PrintReceiptDao;
 import fees_management_system.entity.Course;
 import fees_management_system.entity.FeesDetails;
 import fees_management_system.helper.NumberToWordsConverter;
 
 import java.awt.Color;
+import java.text.SimpleDateFormat;
 import javax.swing.JOptionPane;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -14,21 +16,23 @@ import java.util.stream.Collectors;
 /**
  * @author Rijwank
  */
-public class AddFees extends javax.swing.JFrame {
+public class EditFeesDetails extends javax.swing.JFrame {
 
     Float amount, cgst, sgst;
     float totalAmount;
     Integer receipt_no;
 
-    public AddFees() {
+    public EditFeesDetails() {
         initComponents();
-        displayCashFirst();
+//        displayCashFirst();
         courseComboBox();
 
-        receipt_no = FeesDetailsDao.getReceiptNo();
-        tf_recieptNo.setText(receipt_no.toString());
+        setRecord();
 
-        tf_date.setDate(new Date());
+//        receipt_no = FeesDetailsDao.getReceiptNo();
+//        tf_recieptNo.setText(receipt_no.toString());
+//
+//        tf_date.setDate(new Date());
     }
 
     public void displayCashFirst() {
@@ -76,7 +80,7 @@ public class AddFees extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Please enter reciever's name");
             return false;
         }
-        if (tf_amount.getText().equals("") | tf_amount.getText().matches("[0-9]+") == false) {
+        if (tf_amount.getText().equals("")) { // | tf_amount.getText().matches("[0-9]+") == false
             JOptionPane.showMessageDialog(this, "Please enter valid amount");
             return false;
         }
@@ -92,7 +96,7 @@ public class AddFees extends javax.swing.JFrame {
         }
     }
 
-    public boolean insertData() {
+    public boolean updateData() {
         boolean status = false;
         int receiptNo = Integer.parseInt(tf_recieptNo.getText());
         String sName = tf_receiveFrom.getText();
@@ -114,9 +118,54 @@ public class AddFees extends javax.swing.JFrame {
         int year2 = Integer.parseInt(tf_yearTo.getText());
 
         FeesDetails details = new FeesDetails(receiptNo, paymentMode, date, sName, rollNo, chequeNo, bankName, ddNo, course, gst, amount, total, cgst, sgst, totalInWords, remark, year1, year2);
-        status = FeesDetailsDao.insertFeesDetails(details);
+        status = FeesDetailsDao.updateFeesDetails(details);
 
         return status;
+    }
+
+    public void setRecord() {
+        FeesDetails record = PrintReceiptDao.getRecords();
+
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+        String date = format.format(record.getDate());
+
+        String paymentMode = record.getPaymentMode();
+
+        tf_recieptNo.setText(Integer.toString(record.getReceiptNo()));
+        tf_date.setDate(record.getDate());
+        combo_paymentMode.setSelectedItem(record.getPaymentMode());
+        tf_receiveFrom.setText(record.getStudentName());
+
+        if (paymentMode.equalsIgnoreCase("cash")) {
+            //tf_chequeDDNo.setText("");
+            tf_checkNo.setText("");
+            tf_bank.setText("");
+        } else if (paymentMode.equalsIgnoreCase("dd")) {
+            //tf_chequeDDNo.setText("DD No.:");
+            tf_ddNo.setText(record.getDdNo());
+            tf_bank.setText(record.getBankName());
+        } else if (paymentMode.equalsIgnoreCase("cheque")) {
+            //tf_chequeDDNo.setText("Cheque No.:");
+            tf_checkNo.setText(record.getChequeNo());
+            tf_bank.setText(record.getBankName());
+        } else if (paymentMode.equalsIgnoreCase("card")) {
+            //tf_chequeDDNo.setText("");
+            tf_checkNo.setText("");
+            tf_bank.setText(record.getBankName());
+        }
+        combo_courses.setSelectedItem(record.getCourseName());
+        lbl_gstNo.setText(record.getGstin());
+        tf_amount.setText(Float.toString(record.getAmount()));
+        tf_cgst.setText(Float.toString(record.getCgst()));
+        tf_sgst.setText(Float.toString(record.getSgst()));
+        tf_totalAmount.setText(Float.toString(record.getTotalAmount()));
+        tf_totalInWords.setText(record.getTotalInWords());
+        tf_yearFrom.setText(Integer.toString(record.getYear1()));
+        tf_yearTo.setText(Integer.toString(record.getYear2()));
+        tf_head.setText(record.getCourseName());
+        ta_remark.setText(record.getRemark());
+        tf_rollNo.setText(record.getRollNo());
+
     }
 
     @SuppressWarnings("unchecked")
@@ -191,7 +240,7 @@ public class AddFees extends javax.swing.JFrame {
         tf_bank = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Fees Management System - Add Fees");
+        setTitle("Fees Management System - Edit Fees Details");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         pnl_sidebar.setBackground(new java.awt.Color(0, 102, 102));
@@ -774,8 +823,8 @@ public class AddFees extends javax.swing.JFrame {
     private void btn_printActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_printActionPerformed
         if (validation()) {
             //database code...
-            if (insertData()) {
-                JOptionPane.showMessageDialog(this, "Details are inserted successfuly");
+            if (updateData()) {
+                JOptionPane.showMessageDialog(this, "Details are updated successfuly");
                 PrintReceipt receipt = new PrintReceipt();
                 receipt.setVisible(true);
                 this.dispose();
@@ -822,20 +871,21 @@ public class AddFees extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AddFees.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EditFeesDetails.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AddFees.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EditFeesDetails.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AddFees.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EditFeesDetails.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AddFees.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EditFeesDetails.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AddFees().setVisible(true);
+                new EditFeesDetails().setVisible(true);
             }
         });
     }

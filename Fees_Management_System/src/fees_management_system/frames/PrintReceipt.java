@@ -143,6 +143,7 @@ public class PrintReceipt extends javax.swing.JFrame {
         jSeparator5 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Fees Management System - Print Receipt");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         pnl_sidebar.setBackground(new java.awt.Color(0, 102, 102));
@@ -260,6 +261,9 @@ public class PrintReceipt extends javax.swing.JFrame {
         btn_edit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fees_management_system/img/edit2.png"))); // NOI18N
         btn_edit.setText("EDIT");
         btn_edit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_editMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btn_editMouseEntered(evt);
             }
@@ -683,6 +687,12 @@ public class PrintReceipt extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_btn_printMouseClicked
+
+    private void btn_editMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_editMouseClicked
+        EditFeesDetails edit = new EditFeesDetails();
+        edit.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btn_editMouseClicked
 
     /**
      * @param args the command line arguments

@@ -1,27 +1,27 @@
-
 package fees_management_system.frames;
 
 import fees_management_system.entity.User;
 import fees_management_system.connection.UserDao;
+import fees_management_system.helper.PasswordEncoder;
 import javax.swing.JOptionPane;
 
 /**
  * @author Rijwank
  */
 public class Login extends javax.swing.JFrame {
-    
+
     String uname, password;
 
     public Login() {
         initComponents();
     }
-    
-    public void userVerify(String username, String password) {
+
+    public void userVerify(String username, String password) throws Exception {
         User user = UserDao.userVarification(username, password);
-        if(user != null) {
+        if (user != null) {
             JOptionPane.showMessageDialog(this, "Login successfull");
             home home = new home();
-            home.show();
+            home.setVisible(true);
             this.dispose();
         } else {
             JOptionPane.showMessageDialog(this, "Wrong username or password");
@@ -46,6 +46,7 @@ public class Login extends javax.swing.JFrame {
         lbl_login_err = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Fees Management System - Login Page");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 102));
@@ -203,14 +204,19 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_txt_usernameActionPerformed
 
     private void btn_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_loginActionPerformed
-         uname = txt_username.getText();
-         password = txt_password.getText();
-         
-         if(uname.trim().equals("") || password.trim().equals("")) {
-             lbl_login_err.setText("Please enter username and password");
-         } else {
-             userVerify(uname, password);
-         }
+        uname = txt_username.getText();
+        password = String.valueOf(txt_password.getPassword());
+        try {
+            //String encryptPassword = PasswordEncoder.encrypt(password);
+            if (uname.trim().equals("") || password.trim().equals("")) {
+                lbl_login_err.setText("Please enter username and password");
+            } else {
+                userVerify(uname, password);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }//GEN-LAST:event_btn_loginActionPerformed
 
     private void btn_signupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_signupActionPerformed
