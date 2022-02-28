@@ -36,23 +36,24 @@ public class home extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         pnl_add_course = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        btn_editCourse = new javax.swing.JLabel();
         pnl_add_fees = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
+        btn_addFees = new javax.swing.JLabel();
         pnl_search = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
+        btn_search = new javax.swing.JLabel();
         pnl_view_records = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
+        btn_viewRecord = new javax.swing.JLabel();
         pnl_view_report = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
+        btn_viewReport = new javax.swing.JLabel();
         pnl_about = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
+        btn_about = new javax.swing.JLabel();
         pnl_view_course = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
+        btn_viewCourse = new javax.swing.JLabel();
         pnl_logout = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
+        btn_logout = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Fees Management System - Home");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel3.setBackground(new java.awt.Color(0, 102, 102));
@@ -91,19 +92,22 @@ public class home extends javax.swing.JFrame {
         pnl_add_course.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, java.awt.Color.white, null, null));
         pnl_add_course.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(204, 255, 255));
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fees_management_system/img/edit.png"))); // NOI18N
-        jLabel1.setText("Edit Course");
-        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+        btn_editCourse.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        btn_editCourse.setForeground(new java.awt.Color(204, 255, 255));
+        btn_editCourse.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fees_management_system/img/edit.png"))); // NOI18N
+        btn_editCourse.setText("Edit Course");
+        btn_editCourse.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_editCourseMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel1MouseEntered(evt);
+                btn_editCourseMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel1MouseExited(evt);
+                btn_editCourseMouseExited(evt);
             }
         });
-        pnl_add_course.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 230, 140));
+        pnl_add_course.add(btn_editCourse, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 230, 140));
 
         jPanel4.add(pnl_add_course, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 290, 260, 160));
 
@@ -111,22 +115,22 @@ public class home extends javax.swing.JFrame {
         pnl_add_fees.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, java.awt.Color.white, null, null));
         pnl_add_fees.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(204, 255, 255));
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fees_management_system/img/plus.png"))); // NOI18N
-        jLabel2.setText("  Add Fees");
-        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+        btn_addFees.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        btn_addFees.setForeground(new java.awt.Color(204, 255, 255));
+        btn_addFees.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fees_management_system/img/plus.png"))); // NOI18N
+        btn_addFees.setText("  Add Fees");
+        btn_addFees.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel2MouseClicked(evt);
+                btn_addFeesMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel2MouseEntered(evt);
+                btn_addFeesMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel2MouseExited(evt);
+                btn_addFeesMouseExited(evt);
             }
         });
-        pnl_add_fees.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 220, 140));
+        pnl_add_fees.add(btn_addFees, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 220, 140));
 
         jPanel4.add(pnl_add_fees, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 40, 260, 160));
 
@@ -134,19 +138,22 @@ public class home extends javax.swing.JFrame {
         pnl_search.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, java.awt.Color.white, null, null));
         pnl_search.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(204, 255, 255));
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fees_management_system/img/search-document.png"))); // NOI18N
-        jLabel3.setText("   Search");
-        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+        btn_search.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        btn_search.setForeground(new java.awt.Color(204, 255, 255));
+        btn_search.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fees_management_system/img/search-document.png"))); // NOI18N
+        btn_search.setText("   Search");
+        btn_search.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_searchMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel3MouseEntered(evt);
+                btn_searchMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel3MouseExited(evt);
+                btn_searchMouseExited(evt);
             }
         });
-        pnl_search.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 210, 140));
+        pnl_search.add(btn_search, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 210, 140));
 
         jPanel4.add(pnl_search, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 40, 260, 160));
 
@@ -154,19 +161,22 @@ public class home extends javax.swing.JFrame {
         pnl_view_records.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, java.awt.Color.white, null, null));
         pnl_view_records.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(204, 255, 255));
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fees_management_system/img/text-book-opened-from-top-view.png"))); // NOI18N
-        jLabel4.setText("  View Records");
-        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+        btn_viewRecord.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        btn_viewRecord.setForeground(new java.awt.Color(204, 255, 255));
+        btn_viewRecord.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fees_management_system/img/text-book-opened-from-top-view.png"))); // NOI18N
+        btn_viewRecord.setText("  View Records");
+        btn_viewRecord.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_viewRecordMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel4MouseEntered(evt);
+                btn_viewRecordMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel4MouseExited(evt);
+                btn_viewRecordMouseExited(evt);
             }
         });
-        pnl_view_records.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 240, 140));
+        pnl_view_records.add(btn_viewRecord, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 240, 140));
 
         jPanel4.add(pnl_view_records, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 40, 260, 160));
 
@@ -174,19 +184,22 @@ public class home extends javax.swing.JFrame {
         pnl_view_report.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, java.awt.Color.white, null, null));
         pnl_view_report.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(204, 255, 255));
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fees_management_system/img/view report.png"))); // NOI18N
-        jLabel5.setText(" View Report ");
-        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+        btn_viewReport.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        btn_viewReport.setForeground(new java.awt.Color(204, 255, 255));
+        btn_viewReport.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fees_management_system/img/view report.png"))); // NOI18N
+        btn_viewReport.setText(" View Report ");
+        btn_viewReport.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_viewReportMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel5MouseEntered(evt);
+                btn_viewReportMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel5MouseExited(evt);
+                btn_viewReportMouseExited(evt);
             }
         });
-        pnl_view_report.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 240, 140));
+        pnl_view_report.add(btn_viewReport, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 240, 140));
 
         jPanel4.add(pnl_view_report, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 290, 260, 160));
 
@@ -194,18 +207,21 @@ public class home extends javax.swing.JFrame {
         pnl_about.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, java.awt.Color.white, null, null));
         pnl_about.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fees_management_system/img/about.png"))); // NOI18N
-        jLabel6.setText("About Us");
-        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
+        btn_about.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        btn_about.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fees_management_system/img/about.png"))); // NOI18N
+        btn_about.setText("About Us");
+        btn_about.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_aboutMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel6MouseEntered(evt);
+                btn_aboutMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel6MouseExited(evt);
+                btn_aboutMouseExited(evt);
             }
         });
-        pnl_about.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 140, 70));
+        pnl_about.add(btn_about, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 140, 70));
 
         jPanel4.add(pnl_about, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 470, 210, 80));
 
@@ -213,19 +229,22 @@ public class home extends javax.swing.JFrame {
         pnl_view_course.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, java.awt.Color.white, null, null));
         pnl_view_course.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fees_management_system/img/text-book-opened-from-top-view.png"))); // NOI18N
-        jLabel7.setText(" View Course");
-        jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
+        btn_viewCourse.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        btn_viewCourse.setForeground(new java.awt.Color(255, 255, 255));
+        btn_viewCourse.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fees_management_system/img/text-book-opened-from-top-view.png"))); // NOI18N
+        btn_viewCourse.setText(" View Course");
+        btn_viewCourse.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_viewCourseMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel7MouseEntered(evt);
+                btn_viewCourseMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel7MouseExited(evt);
+                btn_viewCourseMouseExited(evt);
             }
         });
-        pnl_view_course.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 230, 140));
+        pnl_view_course.add(btn_viewCourse, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 230, 140));
 
         jPanel4.add(pnl_view_course, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 290, 260, 160));
 
@@ -233,18 +252,18 @@ public class home extends javax.swing.JFrame {
         pnl_logout.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, java.awt.Color.white, null, null));
         pnl_logout.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fees_management_system/img/logout.png"))); // NOI18N
-        jLabel8.setText("Logout");
-        jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
+        btn_logout.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        btn_logout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fees_management_system/img/logout.png"))); // NOI18N
+        btn_logout.setText("Logout");
+        btn_logout.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel8MouseEntered(evt);
+                btn_logoutMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel8MouseExited(evt);
+                btn_logoutMouseExited(evt);
             }
         });
-        pnl_logout.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 140, 60));
+        pnl_logout.add(btn_logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 140, 60));
 
         jPanel4.add(pnl_logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 470, 190, 80));
 
@@ -254,91 +273,127 @@ public class home extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jLabel1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseEntered
+    private void btn_editCourseMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_editCourseMouseEntered
         Color clr = new Color(0, 51, 51);
         pnl_add_course.setBackground(clr);
-    }//GEN-LAST:event_jLabel1MouseEntered
+    }//GEN-LAST:event_btn_editCourseMouseEntered
 
-    private void jLabel1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseExited
+    private void btn_editCourseMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_editCourseMouseExited
         Color clr = new Color(0, 102, 102);
         pnl_add_course.setBackground(clr);
-    }//GEN-LAST:event_jLabel1MouseExited
+    }//GEN-LAST:event_btn_editCourseMouseExited
 
-    private void jLabel2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseEntered
+    private void btn_addFeesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_addFeesMouseEntered
         Color clr = new Color(0, 51, 51);
         pnl_add_fees.setBackground(clr);
-    }//GEN-LAST:event_jLabel2MouseEntered
+    }//GEN-LAST:event_btn_addFeesMouseEntered
 
-    private void jLabel2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseExited
+    private void btn_addFeesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_addFeesMouseExited
         Color clr = new Color(0, 102, 102);
         pnl_add_fees.setBackground(clr);
-    }//GEN-LAST:event_jLabel2MouseExited
+    }//GEN-LAST:event_btn_addFeesMouseExited
 
-    private void jLabel3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseEntered
+    private void btn_searchMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_searchMouseEntered
         Color clr = new Color(0, 51, 51);
         pnl_search.setBackground(clr);
-    }//GEN-LAST:event_jLabel3MouseEntered
+    }//GEN-LAST:event_btn_searchMouseEntered
 
-    private void jLabel3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseExited
+    private void btn_searchMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_searchMouseExited
         Color clr = new Color(0, 102, 102);
         pnl_search.setBackground(clr);
-    }//GEN-LAST:event_jLabel3MouseExited
+    }//GEN-LAST:event_btn_searchMouseExited
 
-    private void jLabel4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseEntered
+    private void btn_viewRecordMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_viewRecordMouseEntered
         Color clr = new Color(0, 51, 51);
         pnl_view_records.setBackground(clr);
-    }//GEN-LAST:event_jLabel4MouseEntered
+    }//GEN-LAST:event_btn_viewRecordMouseEntered
 
-    private void jLabel4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseExited
+    private void btn_viewRecordMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_viewRecordMouseExited
         Color clr = new Color(0, 102, 102);
         pnl_view_records.setBackground(clr);
-    }//GEN-LAST:event_jLabel4MouseExited
+    }//GEN-LAST:event_btn_viewRecordMouseExited
 
-    private void jLabel5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseEntered
+    private void btn_viewReportMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_viewReportMouseEntered
         Color clr = new Color(0, 51, 51);
         pnl_view_report.setBackground(clr);
-    }//GEN-LAST:event_jLabel5MouseEntered
+    }//GEN-LAST:event_btn_viewReportMouseEntered
 
-    private void jLabel5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseExited
+    private void btn_viewReportMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_viewReportMouseExited
         Color clr = new Color(0, 102, 102);
         pnl_view_report.setBackground(clr);
-    }//GEN-LAST:event_jLabel5MouseExited
+    }//GEN-LAST:event_btn_viewReportMouseExited
 
-    private void jLabel6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseEntered
+    private void btn_aboutMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_aboutMouseEntered
         Color clr = new Color(0, 51, 51);
         pnl_about.setBackground(clr);
-    }//GEN-LAST:event_jLabel6MouseEntered
+    }//GEN-LAST:event_btn_aboutMouseEntered
 
-    private void jLabel6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseExited
+    private void btn_aboutMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_aboutMouseExited
         Color clr = new Color(0, 102, 102);
         pnl_about.setBackground(clr);
-    }//GEN-LAST:event_jLabel6MouseExited
+    }//GEN-LAST:event_btn_aboutMouseExited
 
-    private void jLabel7MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseEntered
+    private void btn_viewCourseMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_viewCourseMouseEntered
         Color clr = new Color(0, 51, 51);
         pnl_view_course.setBackground(clr);
-    }//GEN-LAST:event_jLabel7MouseEntered
+    }//GEN-LAST:event_btn_viewCourseMouseEntered
 
-    private void jLabel7MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseExited
+    private void btn_viewCourseMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_viewCourseMouseExited
         Color clr = new Color(0, 102, 102);
         pnl_view_course.setBackground(clr);
-    }//GEN-LAST:event_jLabel7MouseExited
+    }//GEN-LAST:event_btn_viewCourseMouseExited
 
-    private void jLabel8MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseEntered
+    private void btn_logoutMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_logoutMouseEntered
         Color clr = new Color(0, 51, 51);
         pnl_logout.setBackground(clr);
-    }//GEN-LAST:event_jLabel8MouseEntered
+    }//GEN-LAST:event_btn_logoutMouseEntered
 
-    private void jLabel8MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseExited
+    private void btn_logoutMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_logoutMouseExited
         Color clr = new Color(0, 102, 102);
         pnl_logout.setBackground(clr);
-    }//GEN-LAST:event_jLabel8MouseExited
+    }//GEN-LAST:event_btn_logoutMouseExited
 
-    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+    private void btn_addFeesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_addFeesMouseClicked
         AddFees fees = new AddFees();
         fees.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jLabel2MouseClicked
+    }//GEN-LAST:event_btn_addFeesMouseClicked
+
+    private void btn_searchMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_searchMouseClicked
+        SearchRecord searchRecord = new SearchRecord();
+        searchRecord.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btn_searchMouseClicked
+
+    private void btn_editCourseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_editCourseMouseClicked
+        EditCourse course = new EditCourse();
+        course.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btn_editCourseMouseClicked
+
+    private void btn_viewRecordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_viewRecordMouseClicked
+        ViewRecords view = new ViewRecords();
+        view.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btn_viewRecordMouseClicked
+
+    private void btn_viewReportMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_viewReportMouseClicked
+        ViewReport report = new ViewReport();
+        report.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btn_viewReportMouseClicked
+
+    private void btn_viewCourseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_viewCourseMouseClicked
+        EditCourse course = new EditCourse();
+        course.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btn_viewCourseMouseClicked
+
+    private void btn_aboutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_aboutMouseClicked
+        CopyrightPage copy = new CopyrightPage();
+        copy.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btn_aboutMouseClicked
 
     /**
      * @param args the command line arguments
@@ -376,17 +431,17 @@ public class home extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel btn_about;
+    private javax.swing.JLabel btn_addFees;
+    private javax.swing.JLabel btn_editCourse;
+    private javax.swing.JLabel btn_logout;
+    private javax.swing.JLabel btn_search;
+    private javax.swing.JLabel btn_viewCourse;
+    private javax.swing.JLabel btn_viewRecord;
+    private javax.swing.JLabel btn_viewReport;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;

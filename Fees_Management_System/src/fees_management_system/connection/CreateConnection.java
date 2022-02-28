@@ -26,5 +26,4 @@ public class CreateConnection {
 //    public static void main(String[] args) {
 //        getConnection();
 //    }
-
 }

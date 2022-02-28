@@ -1,6 +1,7 @@
 package fees_management_system.connection;
 
 import fees_management_system.entity.User;
+import fees_management_system.helper.PasswordEncoder;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -42,24 +43,28 @@ public class UserDao {
         return status;
     }
 
-    public static User userVarification(String username, String password) {
+    public static User userVarification(String username, String password) throws Exception {
         User user = null;
+        String encryptPassword = PasswordEncoder.encrypt(password);
         try {
             con = CreateConnection.getConnection();
             System.out.println("Connected to DB successful...");
-            String query = "select * from signup where username='" + username + "' and password='" + password + "'";
+            String query = "select * from signup where username='" + username + "' and password='" + encryptPassword + "'";
 
             Statement stmt = con.createStatement();
-            System.out.println("Query : " + stmt);
+            System.out.println("Query : " + query);
             ResultSet rs = stmt.executeQuery(query);
 
             while (rs.next()) {
                 int id = rs.getInt(1);
                 String fname = rs.getString(2);
                 String lname = rs.getString(3);
-                Date dob = rs.getDate(5);
-                String contact = rs.getString(6);
-                user = new User(id, fname, lname, username, password, dob, contact);
+                String dob = rs.getString("dob");
+                Date date = new SimpleDateFormat("yyyy-MM-dd").parse(dob);
+                String contact = rs.getString(7);
+                //String encryptPass = rs.getString("password");
+                //encryptPass = PasswordEncoder.decrypt(encryptPassword);
+                user = new User(id, fname, lname, username, password, date, contact);
             }
 
         } catch (Exception e) {
