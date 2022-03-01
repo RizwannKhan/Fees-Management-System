@@ -526,10 +526,11 @@ public class PrintReceipt extends javax.swing.JFrame {
         total6.setText("Remarks :");
         pnl_printPage.add(total6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 600, 90, -1));
 
+        ta_remarks.setEditable(false);
         ta_remarks.setColumns(20);
         ta_remarks.setRows(5);
         ta_remarks.setText("remarks....\n");
-        ta_remarks.setEnabled(false);
+        ta_remarks.setAutoscrolls(false);
         jScrollPane1.setViewportView(ta_remarks);
 
         pnl_printPage.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 590, 200, -1));

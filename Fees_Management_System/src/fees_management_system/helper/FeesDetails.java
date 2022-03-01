@@ -1,9 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package fees_management_system.frames;
+package fees_management_system.helper;
 
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
@@ -21,7 +16,6 @@ import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 
 /**
- *
  * @author Rijwank
  */
 @Entity
