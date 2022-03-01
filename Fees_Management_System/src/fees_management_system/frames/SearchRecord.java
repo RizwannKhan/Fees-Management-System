@@ -51,13 +51,13 @@ public class SearchRecord extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        entityManager = java.beans.Beans.isDesignTime() ? null : javax.persistence.Persistence.createEntityManagerFactory("fees_management_system?zeroDateTimeBehavior=convertToNullPU").createEntityManager();
-        feesDetailsQuery = java.beans.Beans.isDesignTime() ? null : entityManager.createQuery("SELECT f FROM FeesDetails f");
-        feesDetailsList = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : feesDetailsQuery.getResultList();
-        feesDetailsQuery1 = java.beans.Beans.isDesignTime() ? null : entityManager.createQuery("SELECT f FROM FeesDetails f");
-        feesDetailsList1 = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : feesDetailsQuery1.getResultList();
-        feesDetailsQuery2 = java.beans.Beans.isDesignTime() ? null : entityManager.createQuery("SELECT f FROM FeesDetails f");
-        feesDetailsList2 = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : feesDetailsQuery2.getResultList();
+        //entityManager = java.beans.Beans.isDesignTime() ? null : javax.persistence.Persistence.createEntityManagerFactory("fees_management_system?zeroDateTimeBehavior=convertToNullPU").createEntityManager();
+        //feesDetailsQuery = java.beans.Beans.isDesignTime() ? null : entityManager.createQuery("SELECT f FROM FeesDetails f");
+        //feesDetailsList = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : feesDetailsQuery.getResultList();
+        //feesDetailsQuery1 = java.beans.Beans.isDesignTime() ? null : entityManager.createQuery("SELECT f FROM FeesDetails f");
+        //feesDetailsList1 = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : feesDetailsQuery1.getResultList();
+        //feesDetailsQuery2 = java.beans.Beans.isDesignTime() ? null : entityManager.createQuery("SELECT f FROM FeesDetails f");
+        //feesDetailsList2 = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : feesDetailsQuery2.getResultList();
         pnl_sidebar = new javax.swing.JPanel();
         pnl_search = new javax.swing.JPanel();
         btn_search = new javax.swing.JLabel();
@@ -422,13 +422,13 @@ public class SearchRecord extends javax.swing.JFrame {
     private javax.swing.JLabel btn_logout;
     private javax.swing.JLabel btn_search;
     private javax.swing.JLabel btn_viewAllRecords;
-    private javax.persistence.EntityManager entityManager;
-    private java.util.List<fees_management_system.frames.FeesDetails> feesDetailsList;
-    private java.util.List<fees_management_system.frames.FeesDetails> feesDetailsList1;
-    private java.util.List<fees_management_system.frames.FeesDetails> feesDetailsList2;
-    private javax.persistence.Query feesDetailsQuery;
-    private javax.persistence.Query feesDetailsQuery1;
-    private javax.persistence.Query feesDetailsQuery2;
+    //private javax.persistence.EntityManager entityManager;
+    //private java.util.List<fees_management_system.helper.FeesDetails> feesDetailsList;
+    //private java.util.List<fees_management_system.helper.FeesDetails> feesDetailsList1;
+    //private java.util.List<fees_management_system.helper.FeesDetails> feesDetailsList2;
+    //private javax.persistence.Query feesDetailsQuery;
+    //private javax.persistence.Query feesDetailsQuery1;
+    //private javax.persistence.Query feesDetailsQuery2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;

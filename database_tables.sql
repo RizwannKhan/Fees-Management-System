@@ -1,5 +1,17 @@
-MySQL query to create fees_details table
+--MySQL query to create tables
 =============================================
+
+CREATE TABLE `signup` (
+  `id` int(11) NOT NULL DEFAULT 0,
+  `firstname` varchar(100) DEFAULT NULL,
+  `lastname` varchar(100) DEFAULT NULL,
+  `username` varchar(100) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `dob` date DEFAULT NULL,
+  `contact` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 
 CREATE TABLE `fees_details` (
   `reciept_no` int(11) NOT NULL DEFAULT 0,
@@ -20,4 +32,13 @@ CREATE TABLE `fees_details` (
   `year1` int(11) DEFAULT NULL,
   `year2` int(11) DEFAULT NULL,
   PRIMARY KEY (`reciept_no`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+
+CREATE TABLE `course` (
+  `id` int(11) NOT NULL DEFAULT 0,
+  `cName` varchar(50) DEFAULT NULL,
+  `cost` char(50) DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;

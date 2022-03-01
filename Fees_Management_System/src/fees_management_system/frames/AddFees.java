@@ -123,9 +123,9 @@ public class AddFees extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        entityManager = java.beans.Beans.isDesignTime() ? null : javax.persistence.Persistence.createEntityManagerFactory("fees_management_system?zeroDateTimeBehavior=convertToNullPU").createEntityManager();
-        courseQuery = java.beans.Beans.isDesignTime() ? null : entityManager.createQuery("SELECT c FROM Course c");
-        courseList = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : courseQuery.getResultList();
+        //entityManager = java.beans.Beans.isDesignTime() ? null : javax.persistence.Persistence.createEntityManagerFactory("fees_management_system?zeroDateTimeBehavior=convertToNullPU").createEntityManager();
+        //courseQuery = java.beans.Beans.isDesignTime() ? null : entityManager.createQuery("SELECT c FROM Course c");
+        //courseList = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : courseQuery.getResultList();
         pnl_sidebar = new javax.swing.JPanel();
         pnl_search = new javax.swing.JPanel();
         btn_search = new javax.swing.JLabel();
@@ -851,9 +851,9 @@ public class AddFees extends javax.swing.JFrame {
     private javax.swing.JLabel btn_viewAllRecords;
     private javax.swing.JComboBox<String> combo_courses;
     private javax.swing.JComboBox<String> combo_paymentMode;
-    private java.util.List<fees_management_system.frames.Course> courseList;
-    private javax.persistence.Query courseQuery;
-    private javax.persistence.EntityManager entityManager;
+    //private java.util.List<fees_management_system.helper.Course> courseList;
+    //private javax.persistence.Query courseQuery;
+    //private javax.persistence.EntityManager entityManager;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
