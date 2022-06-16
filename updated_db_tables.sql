@@ -26,7 +26,7 @@ CREATE TABLE `fees_details` (
   `cgst` float DEFAULT NULL,
   `sgst` float DEFAULT NULL,
   `total_in_words` varchar(255) DEFAULT NULL,
-  `remark` varchar(255) DEFAULT NULL,
+  `remark` varchar(500) DEFAULT NULL,
   `year1` int DEFAULT NULL,
   `year2` int DEFAULT NULL,
   PRIMARY KEY (`receipt_no`)
@@ -40,7 +40,7 @@ CREATE TABLE `signup` (
   `firstname` varchar(100) DEFAULT NULL,
   `lastname` varchar(100) DEFAULT NULL,
   `username` varchar(100) DEFAULT NULL,
-  `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `password` varchar(12) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `dob` date DEFAULT NULL,
   `contact` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`id`)
